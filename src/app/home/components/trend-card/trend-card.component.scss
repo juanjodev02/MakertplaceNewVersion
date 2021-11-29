@@ -1,0 +1,51 @@
+@import "../../../shared/styles/global.scss";
+
+.trend--container {
+  cursor: pointer;
+  padding: 0.5em 0;
+}
+
+.trend--image__container {
+  height: 120px;
+  width: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid $white;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .trend--image__container {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .trend--image__container {
+    height: 200px;
+    width: 200px;
+}
+
+@media screen and (min-width: 1440px) {
+  .trend--image__container {
+    height: 200px;
+    width: 200px;
+  }
+}
+}
+
+.trend--image__container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.trend--name__container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.trend--name__container > h3{
+  color: $white;
+}

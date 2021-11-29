@@ -1,0 +1,18 @@
+<div class="product--card__container container my-3">
+  <div class="row">
+    <img [src]="product.imageItem" [alt]="product.name">
+  </div>
+  <div class="product--card__content row">
+    <div class="col-9 d-flex justify-content-start">
+      <h3 class="m-0">{{product.name | slice:0:50}}</h3>
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-center">
+      {{product.price | currency:'USD'}}
+    </div>
+  </div>
+  <div class="product--card__description row">
+    <div class="col-12">
+      {{product.description | slice:0:100}}
+    </div>
+  </div>
+</div>

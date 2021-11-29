@@ -1,0 +1,64 @@
+<div class="container my-4">
+  <app-section-header [sectionName]="'Categorías'">
+      <!-- Mobile controls -->
+    <div class="col-12 text-right d-block d-md-none d-lg-none d-xl-none">
+        <a class="p-0 btn btn-danger mr-2" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </a>
+        <a class="p-0 btn btn-danger " href="#carouselExampleIndicators2" role="button" data-slide="next">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </a>
+    </div>
+     <!-- Desktop controls -->
+     <div class="col-12 text-right d-none d-md-block d-lg-block d-xl-block">
+        <a class="p-0 btn btn-danger mr-2" href="#carouselExampleIndicators2-d" role="button" data-slide="prev">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </a>
+        <a class="p-0 btn btn-danger " href="#carouselExampleIndicators2-d" role="button" data-slide="next">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </a>
+    </div>
+  </app-section-header>
+  <section>
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <!-- Mobile carousel -->
+            <div
+            id="carouselExampleIndicators2"
+            class="d-block d-md-none d-lg-none d-xl-none carousel slide"
+            data-interval="false"
+            style="min-height: 100%;"
+            >
+              <div class="carousel-inner">
+                  <div *ngFor="let page of pagesIteratorHelper[2]; let i = index" class="carousel-item {{i===0 && 'active'}}">
+                      <div class="row">
+                          <div class="col-6 my-2" *ngFor="let category of categories | slice:itemsPerSlide[2] * i:itemsPerSlide[2] * (i + 1)">
+                              <app-category-card [routerLink]="['/products']" [queryParams]="{a: 1}" [category]="category"></app-category-card>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+              <!-- Desktop carousel -->
+              <div
+                id="carouselExampleIndicators2-d"
+                class="d-none d-md-block d-lg-block d-xl-block carousel slide"
+                data-interval="false"
+                style="min-height: 100%;"
+                >
+                  <div class="carousel-inner">
+                      <div *ngFor="let page of pagesIteratorHelper[0]; let i = index" class="carousel-item {{i===0 && 'active'}}">
+                          <div class="row">
+                              <div class="col-4 my-2" *ngFor="let category of categories | slice:itemsPerSlide[0] * i:itemsPerSlide[0] * (i + 1)">
+                                  <app-category-card [category]="category"></app-category-card>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </section>
+</div>

@@ -1,0 +1,22 @@
+@import '../../../shared/styles/global';
+
+.categories--list__container {
+  background-color: $dark;
+}
+
+.categories--list__item {
+  background-color: $dark;
+  border: none;
+  text-align: center;
+  margin: 5px 0;
+  color: $white;
+}
+
+.categories--list__item:hover {
+  background-color: $red;
+  border-color: $dark;
+}
+
+.active {
+  background-color: $red;
+}

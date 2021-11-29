@@ -1,0 +1,15 @@
+@import '../../../shared/styles/global.scss';
+
+.featuredProducts--title__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+}

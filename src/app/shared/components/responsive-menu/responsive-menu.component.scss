@@ -1,0 +1,39 @@
+@import '../../styles/global.scss';
+
+.menu--container{
+  width: 100%;
+  padding: 10px 0;
+}
+
+.actions--menu__container {
+  padding: 10px;
+}
+
+.actions--item__container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions--item__container > span {
+  margin: 0;
+  margin-left: 15px;
+  padding: 0;
+}
+
+.nav--menu__item {
+  background-color: $red;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  grid-gap: 1em;
+  // flex-wrap: nowrap;
+  // overflow: scroll;
+}

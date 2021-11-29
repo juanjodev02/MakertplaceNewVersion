@@ -1,0 +1,18 @@
+.store--card__image {
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.store--card__image:hover {
+  opacity: 0.8;
+}
+
+.store--card__title {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

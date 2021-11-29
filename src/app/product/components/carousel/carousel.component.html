@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="customCarousel" class="carousel slide" data-interval="false">
+        <!-- slides -->
+        <div class="carousel-inner">
+          <div
+            *ngFor="let image of images;
+            let i = index" class="carousel-item {{i === 0 && 'active'}}"
+          >
+            <img [src]="image.imageUrl" [alt]="image.alt">
+          </div>
+        </div>
+        <!-- Thumbnails -->
+        <ol class="carousel-indicators list-inline">
+          <li *ngFor="let image of images; let i = index" class="list-inline-item {{i === 0 && 'active'}}">
+            <a id="carousel-selector-{{i}}" class="selected" [attr.data-slide-to]="i" data-target="#customCarousel">
+              <img [src]="image.imageUrl" [alt]="image.alt" class="img-fluid">
+            </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

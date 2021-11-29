@@ -1,0 +1,15 @@
+<h2>Categorías</h2>
+<div class="categories--list__container py-2 container-fluid list-group">
+  <a
+    *ngFor="let category of categories; let i = index"
+  >
+    <a *ngIf="i===0" (click)="onClickViewAll()"
+       class="categories--list__item list-group-item list-group-item-action {{currentCategoryId === -1? 'active' : ''}}"
+    >Ver Todos</a>
+    <app-category-item
+      [category]="category"
+      (click)="onClickCategory(category)"
+      class="categories--list__item list-group-item list-group-item-action {{currentCategoryId === category.id ? 'active' : ''}}"
+    ></app-category-item>
+  </a>
+</div>

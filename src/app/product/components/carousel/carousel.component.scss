@@ -1,0 +1,33 @@
+.carousel-inner img {
+  width: 100%;
+  height: 100%
+}
+
+#customCarousel .carousel-indicators {
+  position: static;
+  margin-top: 1rem;
+}
+
+#customCarousel .carousel-indicators > li {
+  width: 100px;
+  height: 100%;
+  cursor: pointer;
+}
+
+#customCarousel .carousel-indicators li img {
+  display: block;
+  opacity: 0.3;
+}
+
+#customCarousel .carousel-indicators li.active img {
+  opacity: 1;
+}
+
+#customCarousel .carousel-indicators li:hover img {
+  opacity: 0.75;
+}
+
+.carousel-item img {
+  width: 100%;
+  object-fit: cover;
+}

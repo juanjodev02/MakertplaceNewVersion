@@ -1,0 +1,25 @@
+<div class="container-fluid mt-5">
+  <div class="row footer--container">
+    <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+      <div class="footer--container__left py-md-3 py-3 py-lg-4">
+        <p class="footer--left__text align-items-xs-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        </p>
+        <form class="footer--form__container w-75" (ngSubmit)="handleSubmit($event)">
+          <div class="input-group mb-3">
+            <input [formControl]="emailField" type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn footer--form__button" type="button">Learn More</button>
+            </div>
+          </div>
+        </form>
+        <div class="col-12 w-xs-100 footer--social__icon">
+          <mat-icon>facebook</mat-icon>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 d-none d-md-block d-lg-block d-xl-block footer--container__right">
+      <img class="footer--image" src="/assets/images/shoes.jpeg"/>
+    </div>
+  </div>
+</div>

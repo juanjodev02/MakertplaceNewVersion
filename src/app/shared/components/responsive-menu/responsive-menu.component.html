@@ -1,0 +1,37 @@
+<div class="pos-f-t container-fluid menu--container">
+  <div class="collapse menu--container" id="navbarToggleExternalContent">
+    <div>
+      <nav class="cotainer d-block d-lg-none d-xl-none d-md-none">
+        <ul class="row">
+          <li *ngFor="let navItem of navBarLinks" class="col-12 nav--menu__item">
+            <a [href]="navItem.url">{{navItem.name| uppercase}}</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container-fluid actions--menu__container">
+        <div class="row">
+          <div class='col-6'>
+            <div class="actions--item__container">
+                <mat-icon class="col-1">account_circle</mat-icon>
+                <span class="col-11">Perfil</span>
+            </div>
+          </div>
+          <div class='col-6'>
+            <div class="actions--item__container">
+              <mat-icon
+                [matBadge]="cartNumber"
+                matBadgeSize="small"
+                matBadgeColor="warn"
+                aria-label="Cart items count"
+                class="col-1"
+              >
+                shopping_cart
+              </mat-icon>
+              <span class="col-11">Carrito</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

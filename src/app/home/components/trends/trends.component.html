@@ -1,0 +1,10 @@
+<div class="container pt-4">
+  <app-section-header [sectionName]="'Tendencias'" [sectionCaption]="'Ver más'" [sectionLink]="'/stores'"></app-section-header>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let trend of trends" class="col-6 col-md-6 col-lg-3 col-xl-3">
+        <app-trend-card [trend]="trend"></app-trend-card>
+      </div>
+    </div>
+  </div>
+</div>

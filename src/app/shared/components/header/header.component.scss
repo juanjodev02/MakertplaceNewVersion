@@ -1,0 +1,108 @@
+@import '../../styles/global.scss';
+
+.header--container {
+  min-height: 100px;
+}
+
+.header--logo {
+  width: 150px;
+  cursor: pointer;
+}
+
+.header--input__container {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  max-height: 40px;
+  border: 1px solid $red;
+  border-radius: 30px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.header--input__search {
+  background: none;
+  padding: 0%;
+  margin: 0%;
+  border: none;
+  width: 85%;
+  height: 100%;
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+  color: $white;
+}
+
+.header--input__search:focus {
+  outline: none;
+}
+
+.header--input__button {
+  width: 15%;
+  height: 100%;
+  background-color: $red;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.header--input__button:hover .header--input__icon {
+  transform: scale(1.1);
+}
+
+.header--input__icon {
+  color: $white;
+  transition: 0.3s;
+}
+
+.header--actions__container {
+  display: flex;
+  gap: 50px;
+}
+
+.header--actions__button {
+  color: $white;
+  cursor: pointer;
+}
+
+// Navbar
+.header--nav__container {
+  background-color: $red;
+  height: 40px;
+}
+
+.header--nav__container > nav {
+  height: 100%;
+}
+
+.header--nav__list {
+  height: 100%;
+  list-style: none;
+}
+
+.header--nav__list-item > a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.header--nav__list-item > a:hover {
+  color: $white;
+}
+
+.header--nav__list-item:hover {
+  background-color: $dark;
+}
+
+// Hamburger button
+.header--menu__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  transition: .3s;
+  color: $white;
+}

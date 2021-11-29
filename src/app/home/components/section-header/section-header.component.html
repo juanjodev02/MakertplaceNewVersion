@@ -1,0 +1,10 @@
+<div class="col-12 py-3 featuredProducts--title__container">
+  <h2>{{sectionName }}</h2>
+  <div>
+    <button *ngIf="sectionCaption" class="btn btn-danger" [routerLink]="sectionLink">
+      {{sectionCaption}}
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+    <ng-content></ng-content>
+  </div>
+</div>

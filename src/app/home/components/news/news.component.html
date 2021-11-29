@@ -1,0 +1,10 @@
+<div class="container">
+  <app-section-header [sectionName]="'Noticias'"></app-section-header>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let singleNews of news" class="col-12 col-md-4 col-lg-4 col-xl-4 my-3 my-md-1 my-lg-1 my-xl-1">
+        <app-news-card [news]="singleNews"></app-news-card>
+      </div>
+    </div>
+  </div>
+</div>

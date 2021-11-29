@@ -1,0 +1,34 @@
+@import '../../../shared/styles/global.scss';
+
+.featuredProducts--title__container > h2 {
+  color: $red;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.featuredProducts--title__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: $white;
+    cursor: pointer;
+    transition: 0.3;
+    & a {
+      color: $white;
+      text-decoration: none;
+      transition: 0.3;
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+}
+
+.featuredProducts--title__container > div:hover, .featuredProducts--title__container > a:hover {
+  color: $red;
+}

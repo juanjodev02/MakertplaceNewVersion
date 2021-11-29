@@ -1,0 +1,11 @@
+<app-store-layout></app-store-layout>
+<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+<div class="container">
+  <h1>Tiendas</h1>
+  <div class="row">
+    <div class="col-3 w-100 d-flex justify-content-center" *ngFor="let store of stores">
+      <app-store-card class="" [store]="store"></app-store-card>
+    </div>
+  </div>
+</div>
+<app-work-with-us-banner></app-work-with-us-banner>

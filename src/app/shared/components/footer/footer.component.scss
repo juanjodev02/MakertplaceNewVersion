@@ -1,0 +1,50 @@
+@import '../../styles/global.scss';
+
+.footer--container {
+  background-color: $red;
+  overflow: hidden;
+}
+
+.footer--container__left, .footer--container__right  {
+  margin: 0;
+  padding: 0;
+}
+
+.footer--container__left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer--image {
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer--left__text {
+  color: $white;
+  text-align: left;
+  padding: 0 2rem;
+}
+
+.footer--form__container {
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.footer--form__button {
+  background-color: $dark;
+  color: $white;
+  border: none;
+  cursor: pointer;
+}
+
+.footer--social__icon {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: min-content;
+}

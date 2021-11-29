@@ -1,0 +1,31 @@
+<div class="container news--card__container" data-toggle="modal" data-target="#newsModal">
+  <div class="row">
+    <img class="img-thumbnail" [src]="news?.imageUrl" [alt]="news?.title"/>
+  </div>
+  <div class="px-3 py-2">
+    <div class="row py-2 newsCard--title">
+      {{ news?.title }}
+    </div>
+    <div class="row">{{news?.description | slice:0:100}} ...</div>
+  </div>
+</div>
+<!--Modal view-->
+<div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="new description" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal--container modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{news?.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img class="img-fluid" [src]="news?.imageUrl" [alt]="news?.title"/>
+        {{news?.description}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="products--list__container row w-100 m-0" *ngIf="(products$ | async) as products">
+  <div class="row w-100 m-0">
+    <div class="h3 d-flex w-100 h-100 justify-content-center align-items-center" *ngIf="products.length === 0">
+      <h3>No se han encontrado productos</h3>
+    </div>
+    <div *ngFor="let product of products" class="col-3">
+      <a [routerLink]="[product.id.toString()]">
+        <app-product-card [product]="product"></app-product-card>
+      </a>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <button *ngIf="products.length !== 0" class="btn btn-danger m-auto">Cargar más productos</button>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+@import '../../../shared/styles/global.scss';
+
+.banner--container {
+  width: 100%;
+  background-color: $white;
+  color: $dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner--icon {
+  color: $dark;
+  font-size: 60px;
+}
+
+.banner--icon__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $dark;
+}
+
+h4, p {
+  margin: 0;
+  color: $dark;
+}
+
+p {
+  margin-bottom: .5em ;
+}
