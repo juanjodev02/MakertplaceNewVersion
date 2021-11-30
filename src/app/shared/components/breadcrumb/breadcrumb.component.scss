@@ -4,6 +4,10 @@
   background-color: $dark;
 }
 
+a.active:hover {
+  color: #6c757d;
+}
+
 a:hover {
   color: $red;
 }

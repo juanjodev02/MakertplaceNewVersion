@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Product } from '../../../core/models/product.model';
 
 @Component({
@@ -6,11 +6,17 @@ import { Product } from '../../../core/models/product.model';
   templateUrl: './featured-products.component.html',
   styleUrls: ['./featured-products.component.scss']
 })
-export class FeaturedProductsComponent {
+export class FeaturedProductsComponent implements OnInit
+{
 
   @Input()
   public products: Product[] = []
 
-  constructor() { }
+  constructor() {
+  }
+
+  ngOnInit() {
+    this.products = this.products.slice(0, 4)
+  }
 
 }

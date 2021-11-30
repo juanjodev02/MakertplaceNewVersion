@@ -1,5 +1,5 @@
 export interface ISlide {
-  img: string;
+  imageUrl: string;
   title: string;
   text: string;
 }

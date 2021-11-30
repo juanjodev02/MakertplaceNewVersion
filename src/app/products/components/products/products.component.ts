@@ -4,119 +4,8 @@ import {BehaviorSubject} from 'rxjs';
 import {Product} from '../../../core/models/product.model';
 import {Category} from '../../../core/models/category.model';
 import {IBreadcrumb} from "../../../shared/types/IBreadcrumb";
-
-const mockCategories: Category[] = Array.from({length: 10}).map((_, i) => ({
-  id: i + 1,
-  name: `Category ${i + 1}`,
-  imageUrl: `https://picsum.photos/id/${i + 1}/200/300`
-}));
-
-const mockProducts: Product[] = [
-  {
-    id: '1',
-    name: 'Product 1',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 1,
-  },
-  {
-    id: '2',
-    name: 'Product 2',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 2,
-  },
-  {
-    id: '3',
-    name: 'Product 3',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 3,
-  },
-  {
-    id: '4',
-    name: 'Product 4',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 4,
-  }, {
-    id: '4',
-    name: 'Product 4',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 4,
-  }, {
-    id: '4',
-    name: 'Product 4',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 4,
-  }, {
-    id: '4',
-    name: 'Product 4',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 4,
-  }, {
-    id: '4',
-    name: 'Product 4',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 4,
-  }, {
-    id: '4',
-    name: 'Product 4',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 4,
-  }, {
-    id: '4',
-    name: 'Product 4',
-    category: 'A',
-    price: 100,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,',
-    imageItem: 'https://via.placeholder.com/150',
-    photoBanner: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    storeId: '1',
-    categoryId: 4,
-  },
-];
+import {ProductsService} from "../../../core/services/products.service";
+import {CategoriesService} from "../../../core/services/categories.service";
 
 @Component({
   selector: 'app-products',
@@ -127,7 +16,7 @@ export class ProductsComponent implements OnInit {
 
   public categories: Category[];
 
-  public breadcrumbs: IBreadcrumb[] = [
+  public readonly breadcrumbs: IBreadcrumb[] = [
     {
       label: 'Inicio',
       url: '/'
@@ -138,45 +27,104 @@ export class ProductsComponent implements OnInit {
     }
   ];
 
+  private readonly productsPerPage = 20;
+
+  private offset = 0;
+
   public currentCategoryId = -1;
+
   private productsPerCategory = new BehaviorSubject<Product[]>([]);
+
   public productsPerCategory$ = this.productsPerCategory.asObservable();
 
-  constructor(private route: ActivatedRoute){
-    this.productsPerCategory.next(mockProducts);
+  public allowLoadMore = true;
+
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductsService,
+    private categoriesService: CategoriesService,
+  ){
   }
 
   ngOnInit(): void {
-    this.categories = mockCategories;
-    // Get the category id from the url
+    this.getCategoryIdFromUrl();
+    this.fetchAllCategories();
+    this.fetchProducts();
+  }
+
+  private getCategoryIdFromUrl(): void {
     this.route.queryParams.subscribe(params => {
       const categoryId = params['category'];
-      console.log(categoryId);
       if (categoryId) {
         this.setCurrentCategory(null, +categoryId)
       }
     });
   }
 
-  /**
-   * Change the current category, and update the products
-   * Here we need to fetch the products from the server
-   */
-  setCurrentCategory(category?: Category | null, categoryId?: number): void {
+  private fetchAllCategories(): void {
+    this.categoriesService.getCategories().subscribe(categories => {
+      this.categories = categories;
+    });
+  }
+
+  private fetchProductsByCategory(concat?: boolean): void {
+    this.categoriesService
+      .getProductsByCategory(this.currentCategoryId, this.productsPerPage, this.offset)
+      .subscribe({
+        next: (products) => {
+          concat ?
+            this.productsPerCategory.next([...this.productsPerCategory.value, ...products])
+            :
+            this.productsPerCategory.next(products);
+        },
+        error: () => this.allowLoadMore = false,
+      });
+  }
+
+  private fetchProducts(concat?: boolean): void {
+    this.productService
+      .getProducts(this.productsPerPage, this.offset)
+      .subscribe({
+        next: (products) => {
+          concat ?
+            this.productsPerCategory.next([...this.productsPerCategory.value, ...products])
+            :
+            this.productsPerCategory.next(products);
+        },
+        error: () => this.allowLoadMore = false,
+      });
+  }
+
+  public fetchMoreProducts(): void {
+    this.offset += this.productsPerPage;
+    if (this.currentCategoryId === -1) {
+      this.fetchProducts(true);
+    } else {
+      this.fetchProductsByCategory(true);
+    }
+  }
+
+  public setCurrentCategory(category?: Category | null, categoryId?: number): void {
+    this.offset = 0;
+    this.allowLoadMore = true;
     if (categoryId) {
       this.currentCategoryId = categoryId;
-      this.productsPerCategory.next(mockProducts.filter(product => product.categoryId === categoryId));
+      this.fetchProductsByCategory();
       return;
     }
 
     if (!category) {
-      this.productsPerCategory.next(mockProducts);
+      this.currentCategoryId = -1;
+      this.fetchProducts();
       return;
     }
+
     if (this.currentCategoryId === category.id) {
       return;
     }
-    this.currentCategoryId = category.id as number;
-    this.productsPerCategory.next(mockProducts.filter(product => product.categoryId === this.currentCategoryId));
+
+    this.currentCategoryId = category.id;
+    this.fetchProductsByCategory();
+    return;
   }
 }

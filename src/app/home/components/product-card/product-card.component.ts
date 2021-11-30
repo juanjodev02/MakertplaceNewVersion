@@ -9,7 +9,7 @@ import { Product } from '../../../core/models/product.model';
 export class ProductCardComponent {
 
   @Input()
-  public product: Product | null = null;
+  public product: Product;
 
   constructor() { }
 

@@ -9,7 +9,7 @@ import { Trend } from '../../../core/models/trend.model';
 export class TrendCardComponent {
 
   @Input()
-  public trend?: Trend;
+  public trend: Trend;
 
   constructor() { }
 

@@ -11,7 +11,7 @@
             <div class="col-md-7">
               <h1>{{product.name}}</h1>
               <p>{{product.description}}</p>
-              <h4>{{product.price | currency:'USD':true}}</h4>
+              <h4>{{product.price | currency:'USD'}}</h4>
               <button class="btn btn-success" (click)="addToCart()">
                 <span class="glyphicon glyphicon-shopping-cart"></span>
                 Add to cart

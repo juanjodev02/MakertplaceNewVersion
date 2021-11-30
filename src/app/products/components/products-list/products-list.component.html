@@ -10,6 +10,6 @@
     </div>
   </div>
   <div class="row mt-4">
-    <button *ngIf="products.length !== 0" class="btn btn-danger m-auto">Cargar más productos</button>
+    <button *ngIf="products.length !== 0 && allowLoadMore" (click)="onLoadMoreProducts()" class="btn btn-danger m-auto">Cargar más productos</button>
   </div>
 </div>

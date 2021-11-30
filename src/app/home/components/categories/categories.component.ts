@@ -31,6 +31,5 @@ export class CategoriesComponent implements OnInit {
     this.pagesIteratorHelper[0] = Array(this.pages[0]).fill(0).map((x, i) => i);
     this.pagesIteratorHelper[1] = Array(this.pages[1]).fill(0).map((x, i) => i);
     this.pagesIteratorHelper[2] = Array(this.pages[2]).fill(0).map((x, i) => i);
-    console.log(this.pagesIteratorHelper);
   }
 }

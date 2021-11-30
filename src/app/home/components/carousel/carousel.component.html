@@ -4,7 +4,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item" *ngFor="let item of slides;let index = index;let isFirst = first" [ngClass]="{active:isFirst}">
-      <img [src]="item.img" class="d-block w-100" [alt]="item.title">
+      <img [src]="item.imageUrl" class="d-block w-100" [alt]="item.title">
       <div class="carousel--overlay__container"></div>
       <div class="carousel-caption d-none d-md-block">
         <h5 class="carousel--item__title" [textContent]="item.title"></h5>

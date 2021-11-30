@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Product} from '../../../core/models/product.model';
 
@@ -12,7 +12,17 @@ export class ProductsListComponent  {
   @Input()
   public products$: Observable<Product[]>;
 
+  @Input()
+  public allowLoadMore: boolean;
+
+  @Output()
+  public loadMoreProducts: EventEmitter<void> = new EventEmitter<void>();
+
   constructor() {
+  }
+
+  public onLoadMoreProducts(): void {
+    this.loadMoreProducts.emit();
   }
 
 }

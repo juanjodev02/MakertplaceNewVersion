@@ -24,7 +24,12 @@
         </div>
       </div>
       <div class="row">
-        <app-products-list class="w-100" [products$]="productsPerCategory$"></app-products-list>
+        <app-products-list
+          class="w-100"
+          [products$]="productsPerCategory$"
+          [allowLoadMore]="allowLoadMore"
+          (loadMoreProducts)="fetchMoreProducts()"
+        ></app-products-list>
       </div>
     </div>
   </div>
