@@ -11,9 +11,9 @@ export class CategoriesService {
 
   constructor() { }
 
-  public getCategories(): Observable<Category[]> {
+  public getCategories(count?: number): Observable<Category[]> {
     return new Observable(observer => {
-      observer.next(mockCategories);
+      observer.next(mockCategories.slice(0, count));
       observer.complete();
     });
   }

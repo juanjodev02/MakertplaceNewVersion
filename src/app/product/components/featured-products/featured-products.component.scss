@@ -1,0 +1,15 @@
+.scroll-container {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  min-width: 300px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

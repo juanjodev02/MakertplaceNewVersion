@@ -1,0 +1,8 @@
+<div class="container">
+  <app-section-header sectionName="Productos"></app-section-header>
+  <div class="row">
+    <div *ngFor="let product of products" class="col-md-3">
+      <app-product-card [routerLink]="['/products', product.id.toString()]" [queryParams]="{storeId: storeId, storeName: storeName}" [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>

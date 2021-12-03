@@ -1,0 +1,19 @@
+<app-image-cover [imageUrl]="store.coverUrl" [altText]="store.name"></app-image-cover>
+<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+<app-store-information
+  [storeDescription]="store.description"
+  [storeName]="store.name"
+  [storeImage]="store.imageUrl"
+  [storePhone]="store.phone"
+  [storeAddress]="store.address"
+></app-store-information>
+<app-store-products
+  [products]="products"
+  [storeId]="store.id"
+  [storeName]="store.name"
+></app-store-products>
+<div *ngIf="allowLoadMoreProducts" class="container">
+  <div class="row">
+    <button (click)="loadMoreProducts()" class="btn btn-danger offset-5 col-2 m-auto">Cargar más</button>
+  </div>
+</div>

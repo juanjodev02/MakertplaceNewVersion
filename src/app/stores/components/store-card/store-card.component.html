@@ -1,4 +1,4 @@
-<div class="container-fluid mb-2">
+<div class="container-fluid mb-2" [routerLink]="['/stores', store.id.toString()]">
   <div class="row">
     <img [src]="store.imageUrl" class="store--card__image" [alt]="store.name">
   </div>

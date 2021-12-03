@@ -16,7 +16,7 @@ export class FeaturedProductsComponent implements OnInit
   }
 
   ngOnInit() {
-    this.products = this.products.slice(0, 4)
+    this.products = this.products.slice(0, 4);
   }
 
 }

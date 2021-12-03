@@ -10,9 +10,7 @@
       {{product.price | currency:'USD'}}
     </div>
   </div>
-  <div class="product--card__description row">
-    <div class="col-12">
-      {{product.description | slice:0:100}}
-    </div>
+  <div *ngIf="product.discount !== 0" class="product--card__discount badge badge-success">
+    -{{product.discount}}%
   </div>
 </div>

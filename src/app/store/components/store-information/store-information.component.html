@@ -1,0 +1,24 @@
+<div class="container">
+  <app-section-header [sectionName]="storeName"></app-section-header>
+
+  <div class="row">
+    <div class="col-md-2">
+      <img [src]="storeImage" [alt]="storeName"/>
+    </div>
+    <div class="col-md-10">
+      <div class="row mb-3">
+        <div class="col-md-9">
+          <h3>{{storeAddress}}</h3>
+        </div>
+        <div class="col-3">
+          <p><strong>Calificación: </strong><span>★★★★☆☆</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>{{storeDescription}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

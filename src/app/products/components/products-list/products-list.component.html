@@ -1,11 +1,11 @@
-<div class="products--list__container row w-100 m-0" *ngIf="(products$ | async) as products">
+<div class="products--list__container container-fluid row w-100 m-0" *ngIf="(products$ | async) as products">
   <div class="row w-100 m-0">
     <div class="h3 d-flex w-100 h-100 justify-content-center align-items-center" *ngIf="products.length === 0">
       <h3>No se han encontrado productos</h3>
     </div>
-    <div *ngFor="let product of products" class="col-3">
+    <div *ngFor="let product of products" class="col-6 col-md-4 col-lg-3">
       <a [routerLink]="[product.id.toString()]">
-        <app-product-card [product]="product"></app-product-card>
+        <app-product-card [routerLink]="['/products', product.id.toString()]" [product]="product"></app-product-card>
       </a>
     </div>
   </div>

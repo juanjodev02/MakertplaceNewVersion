@@ -5,12 +5,16 @@ import { ProductRoutingModule } from './product-routing.module';
 import { ProductComponent } from './components/product/product.component';
 import {SharedModule} from "../shared/shared.module";
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
+import { FeaturedProductCardComponent } from './components/featured-product-card/featured-product-card.component';
 
 
 @NgModule({
   declarations: [
     ProductComponent,
-    CarouselComponent
+    CarouselComponent,
+    FeaturedProductsComponent,
+    FeaturedProductCardComponent,
   ],
   imports: [
     CommonModule,

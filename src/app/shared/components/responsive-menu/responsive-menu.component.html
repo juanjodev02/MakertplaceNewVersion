@@ -3,8 +3,8 @@
     <div>
       <nav class="cotainer d-block d-lg-none d-xl-none d-md-none">
         <ul class="row">
-          <li *ngFor="let navItem of navBarLinks" class="col-12 nav--menu__item">
-            <a [href]="navItem.url">{{navItem.name| uppercase}}</a>
+          <li *ngFor="let navItem of navBarLinks" class="col-12 nav--menu__item" [routerLink]="navItem.url">
+            <a>{{navItem.name| uppercase}}</a>
           </li>
         </ul>
       </nav>

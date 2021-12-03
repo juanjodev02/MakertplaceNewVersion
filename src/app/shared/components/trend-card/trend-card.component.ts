@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Store } from 'src/app/core/models/store.model';
 import { Trend } from '../../../core/models/trend.model';
 
 @Component({
@@ -9,7 +10,7 @@ import { Trend } from '../../../core/models/trend.model';
 export class TrendCardComponent {
 
   @Input()
-  public trend: Trend;
+  public trend: Store;
 
   constructor() { }
 

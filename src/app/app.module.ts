@@ -13,6 +13,7 @@ import {SharedModule} from "./shared/shared.module";
 import {StoresModule} from "./stores/stores.module";
 import {RouterModule} from "@angular/router";
 import {ProductModule} from "./product/product.module";
+import { StoreModule } from './store/store.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {ProductModule} from "./product/product.module";
     ProductsModule,
     SharedModule,
     StoresModule,
-    ProductModule
+    ProductModule,
+    StoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

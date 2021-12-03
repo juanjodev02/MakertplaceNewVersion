@@ -44,9 +44,9 @@
           <a class="header--actions__button" href="#">
             <mat-icon>account_circle</mat-icon>
           </a>
-          <a class="header--actions__button" href="#">
+          <a class="header--actions__button" [routerLink]="['/login']">
             <mat-icon
-              [matBadge]="cartNumber"
+              [matBadge]="productsInCartLength$ | async"
               matBadgeSize="medium"
               matBadgeColor="warn"
               aria-label="Cart items count"
@@ -65,7 +65,7 @@
       <div class="col-8 col-md-10 col-lg-8">
         <ul class="row header--nav__list">
           <li class="col header--nav__list-item" *ngFor="let navItem of navBarLinks">
-            <a [href]="navItem.url">{{navItem.name| uppercase}}</a>
+            <a class="anchor" [routerLink]="navItem.url" [routerLinkActive]="'active'">{{navItem.name| uppercase}}</a>
           </li>
         </ul>
       </div>

@@ -6,6 +6,7 @@ import {Category} from '../../../core/models/category.model';
 import {IBreadcrumb} from "../../../shared/types/IBreadcrumb";
 import {ProductsService} from "../../../core/services/products.service";
 import {CategoriesService} from "../../../core/services/categories.service";
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products',
@@ -13,6 +14,8 @@ import {CategoriesService} from "../../../core/services/categories.service";
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+
+  private title = 'Productos | Zwippe Marketplace';
 
   public categories: Category[];
 
@@ -33,6 +36,8 @@ export class ProductsComponent implements OnInit {
 
   public currentCategoryId = -1;
 
+  public currentCategoryIdResponsive = -1;
+
   private productsPerCategory = new BehaviorSubject<Product[]>([]);
 
   public productsPerCategory$ = this.productsPerCategory.asObservable();
@@ -43,6 +48,8 @@ export class ProductsComponent implements OnInit {
     private route: ActivatedRoute,
     private productService: ProductsService,
     private categoriesService: CategoriesService,
+    private titleService: Title,
+    private metaTagService: Meta,
   ){
   }
 
@@ -50,13 +57,26 @@ export class ProductsComponent implements OnInit {
     this.getCategoryIdFromUrl();
     this.fetchAllCategories();
     this.fetchProducts();
+    this.setupPageMetadata();
+  }
+
+  private setupPageMetadata(): void {
+    this.titleService.setTitle(this.title);
+    this.metaTagService.addTags([
+      { name: 'keywords', content: 'Zwippe Marketplace Products' },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'author', content: 'juanjodev02@zwippe-technologies' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'date', content: '2021-11-30', scheme: 'YYYY-MM-DD' },
+      { charset: 'UTF-8' }
+    ]);
   }
 
   private getCategoryIdFromUrl(): void {
     this.route.queryParams.subscribe(params => {
       const categoryId = params['category'];
       if (categoryId) {
-        this.setCurrentCategory(null, +categoryId)
+        this.setCurrentCategory(null, +categoryId);
       }
     });
   }
@@ -126,5 +146,10 @@ export class ProductsComponent implements OnInit {
     this.currentCategoryId = category.id;
     this.fetchProductsByCategory();
     return;
+  }
+
+  public onChangeResponsiveCategory(): void {
+    console.log(this.currentCategoryIdResponsive);
+    this.setCurrentCategory(null, this.currentCategoryIdResponsive);
   }
 }

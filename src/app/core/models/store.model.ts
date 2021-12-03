@@ -3,6 +3,7 @@ export interface Store {
   name: string;
   imageUrl: string;
   coverUrl: string;
+  description: string;
   address: string;
   city: string;
   state: string;

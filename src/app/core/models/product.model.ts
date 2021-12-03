@@ -3,6 +3,8 @@ export interface Product {
   storeId: number;
   categoryId: number;
   name: string;
+  featured: boolean;
+  stars: number;
   price: number;
   discount: number;
   stock: number;

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Trend } from '../../../core/models/trend.model';
+import { Store } from 'src/app/core/models/store.model';
 
 @Component({
   selector: 'app-trends',
@@ -9,7 +9,7 @@ import { Trend } from '../../../core/models/trend.model';
 export class TrendsComponent {
 
   @Input()
-  public trends: Trend[] = [];
+  public trends: Store[] = [];
 
   constructor() { }
 

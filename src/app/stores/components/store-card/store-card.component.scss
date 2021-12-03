@@ -1,6 +1,8 @@
+@import '../../../shared/styles/global.scss';
+
 .store--card__image {
   width: 100%;
-  height: 150px;
+  height: 100%;
   border-radius: 50%;
   cursor: pointer;
   transition: .3s;
@@ -16,5 +18,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.store--card__title > h3 {
+  color: $white;
 }
 

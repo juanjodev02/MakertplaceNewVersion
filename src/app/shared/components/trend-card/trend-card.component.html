@@ -1,4 +1,4 @@
-<div class="container trend--container">
+<div [routerLink]="['/stores', trend.id]" class="container trend--container">
   <div class="trend--image__container">
     <img [src]="trend?.imageUrl" [alt]="trend.name"/>
   </div>

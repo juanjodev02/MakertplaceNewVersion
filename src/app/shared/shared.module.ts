@@ -7,10 +7,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { ResponsiveMenuComponent } from './components/responsive-menu/responsive-menu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StoreLayoutComponent } from './components/store-layout/store-layout.component';
-import {ActionsComponent} from './components/actions/actions.component';
-import {BannerComponent} from './components/banner/banner.component';
-import {MaterialModule} from "../material/material.module";
+import { ActionsComponent } from './components/actions/actions.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { MaterialModule } from '../material/material.module';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { TrendCardComponent } from './components/trend-card/trend-card.component';
+import { TrendsComponent } from './components/trends/trends.component';
+import { SectionHeaderComponent } from './components/section-header/section-header.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,22 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     StoreLayoutComponent,
     ActionsComponent,
     BannerComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    TrendCardComponent,
+    TrendsComponent,
+    SectionHeaderComponent,
+    ProductCardComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MaterialModule,
-    ReactiveFormsModule,
+  imports: [CommonModule, RouterModule, MaterialModule, ReactiveFormsModule],
+  exports: [
+    LayoutComponent,
+    HeaderComponent,
+    StoreLayoutComponent,
+    BreadcrumbComponent,
+    TrendCardComponent,
+    TrendsComponent,
+    SectionHeaderComponent,
+    ProductCardComponent,
   ],
-  exports: [LayoutComponent, HeaderComponent, StoreLayoutComponent, BreadcrumbComponent]
 })
-export class SharedModule { }
+export class SharedModule {}
