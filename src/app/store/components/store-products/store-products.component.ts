@@ -11,7 +11,7 @@ export class StoreProductsComponent {
   products: Product[];
 
   @Input()
-  storeId: number;
+  storeId: string;
 
   @Input()
   storeName: string;

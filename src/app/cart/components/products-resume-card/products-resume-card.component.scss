@@ -1,0 +1,59 @@
+@import '../../../shared/styles/global.scss';
+
+.product--card__container {
+  margin: 1em 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid $gray;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.quantity--container {
+  background-color: $dark;
+  width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions--container {
+  display: flex;
+  gap: 1em;
+}
+
+button {
+  background-color: $dark;
+  border: none;
+  color: $white;
+  font-size: 1.5em;
+}
+
+
+.information--container {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.price--text {
+  font-size: 1.2em;
+  color: $red;
+}
+
+.delete--icon {
+  padding: auto;
+  color: $gray;
+  cursor: pointer;
+}
+
+.delete--icon:hover {
+  color: $red;
+}

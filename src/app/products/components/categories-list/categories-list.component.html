@@ -4,7 +4,7 @@
     *ngFor="let category of categories; let i = index"
   >
     <a *ngIf="i===0" (click)="onClickViewAll()"
-       class="categories--list__item list-group-item list-group-item-action {{currentCategoryId === -1? 'active' : ''}}"
+       class="categories--list__item list-group-item list-group-item-action {{currentCategoryId === '-1'? 'active' : ''}}"
     >Ver Todos</a>
     <app-category-item
       [category]="category"

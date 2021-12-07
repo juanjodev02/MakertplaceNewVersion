@@ -4,7 +4,7 @@
   class="form-select form-select-sm products--form__select"
   aria-label="categories"
   >
-      <option [selected]="currentCategoryId === -1" [value]="-1">Todos</option>
+      <option [selected]="currentCategoryId === '-1'" [value]="'-1'">Todos</option>
       <option
       [selected]="currentCategoryId === category.id"
       *ngFor="let category of categories; let i = index"

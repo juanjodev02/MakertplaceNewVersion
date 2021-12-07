@@ -1,9 +1,15 @@
-<div class="container">
+<div class="container-fluid px-5">
   <div class="row">
-    <div class="col-6">
-      <app-products-resume></app-products-resume>
+    <div class="col-4">
+      <app-products-resume
+      [cart]="cart"
+      [subTotal]="subTotal"
+      [total]="total"
+      [shippingCost]="shippingCost"
+      [tax]="tax"
+      ></app-products-resume>
     </div>
-    <div class="col-6">
+    <div class="col-8">
       <app-map></app-map>
     </div>
   </div>

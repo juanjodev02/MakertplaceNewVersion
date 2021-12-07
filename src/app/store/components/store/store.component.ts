@@ -38,7 +38,7 @@ export class StoreComponent implements OnInit {
 
   private getStoreIdFromUrl() {
     this.route.params.subscribe((params) => {
-      const id = Number(params['id']);
+      const id = params['id'];
       this.fetchStore(id);
     });
   }
@@ -53,7 +53,7 @@ export class StoreComponent implements OnInit {
       });
   }
 
-  private fetchStore(id: number): void {
+  private fetchStore(id: string): void {
     this.storesService.getStore(id).subscribe((store) => {
       this.store = store;
     });

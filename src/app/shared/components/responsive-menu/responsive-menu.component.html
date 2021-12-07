@@ -17,9 +17,9 @@
             </div>
           </div>
           <div class='col-6'>
-            <div class="actions--item__container">
+            <a class="actions--item__container" routerLink="/cart">
               <mat-icon
-                [matBadge]="cartNumber"
+                [matBadge]="productCartLength"
                 matBadgeSize="small"
                 matBadgeColor="warn"
                 aria-label="Cart items count"
@@ -28,7 +28,7 @@
                 shopping_cart
               </mat-icon>
               <span class="col-11">Carrito</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>

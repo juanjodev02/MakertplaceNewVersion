@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs";
-import {Product} from "../models/product.model";
-import {mockProducts} from "../../../mocks/mock.data";
+import { Observable } from 'rxjs';
+import { Product } from '../models/product.model';
+import { mockProducts } from '../../../mocks/mock.data';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductsService {
-
-  constructor() { }
+  constructor() {}
 
   public getProducts(count?: number, offset = 0): Observable<Product[]> {
-    return new Observable(observer => {
+    return new Observable((observer) => {
       if (!count) {
         observer.next(mockProducts);
       } else {
@@ -26,9 +25,9 @@ export class ProductsService {
     });
   }
 
-  public getProduct(productId: number): Observable<Product> {
-    return new Observable(observer => {
-      const product = mockProducts.find(product => product.id === productId);
+  public getProduct(productId: string): Observable<Product> {
+    return new Observable((observer) => {
+      const product = mockProducts.find((product) => product.id === productId);
       if (product) {
         observer.next(product);
       } else {
@@ -38,12 +37,17 @@ export class ProductsService {
     });
   }
 
-  public getFeaturedProducts(count?: number, offset = 0): Observable<Product[]> {
-    return new Observable(observer => {
+  public getFeaturedProducts(
+    count?: number,
+    offset = 0
+  ): Observable<Product[]> {
+    return new Observable((observer) => {
       if (!count) {
-        observer.next(mockProducts.filter(product => product.featured));
+        observer.next(mockProducts.filter((product) => product.featured));
       } else {
-        const products = mockProducts.filter(product => product.featured).slice(offset, offset + count);
+        const products = mockProducts
+          .filter((product) => product.featured)
+          .slice(offset, offset + count);
         if (products.length) {
           observer.next(products);
         } else {

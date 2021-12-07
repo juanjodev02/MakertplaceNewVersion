@@ -1,0 +1,28 @@
+<div class="container py-0 my-4" *ngIf="(product$ | async) as product">
+  <div class="row  product--card__container">
+    <div class="col-md-3 p-0">
+      <img src="{{ product.coverImageUrl }}" alt="{{ product.name }}">
+    </div>
+    <div class="col">
+      <div class="row pl-3">
+        <h2 class="col-10">{{ product.name }}</h2>
+        <mat-icon (click)='deleteProduct()' class="delete--icon col-2">delete</mat-icon>
+      </div>
+      <span class="text-muted col-1">{{ product.price | currency: 'USD' }}</span>
+      <div class="row information--container">
+        <div class="col mt-2 actions--container">
+          <button class="btn btn-danger" (click)="decrement()">-</button>
+          <div class="quantity--container">
+            <span>{{ quantity }}</span>
+          </div>
+          <button class="btn btn-danger" (click)="increment(product)">+</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col offset-9">
+          <p class="price--text">{{ product.price * quantity | currency: 'USD' }}</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
