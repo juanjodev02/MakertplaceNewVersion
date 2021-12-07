@@ -1,1 +1,29 @@
-<h2>Resumen de Orden</h2>
+<div class="container my-4">
+  <h2>Resumen de Orden</h2>
+  <div *ngIf="!cart || cart.items.length === 0">
+      <p>No hay productos en el carrito</p>
+  </div>
+  <div class="pr-5" *ngIf="cart && cart.items.length > 0">
+    <div *ngFor="let cartItem of cart.items">
+      <app-products-resume-card [productId]="cartItem.productId" [quantity]="cartItem.quantity"></app-products-resume-card>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row information--row">
+      <p>Subtotal</p>
+      <p>{{subTotal | currency:'USD'}}</p>
+    </div>
+    <div class="row information--row">
+      <p>Costo de envío</p>
+      <p>{{shippingCost | currency:'USD'}}</p>
+    </div>
+    <div class="row information--row">
+      <p>I.V.A</p>
+      <p>{{tax | currency:'USD'}}</p>
+    </div>
+    <div class="row information--row">
+      <p>Valor total</p>
+      <p>{{total | currency:'USD'}}</p>
+    </div>
+  </div>
+</div>

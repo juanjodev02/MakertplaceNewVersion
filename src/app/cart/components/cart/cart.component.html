@@ -1,7 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
-      <app-products-resume></app-products-resume>
+      <app-products-resume
+      [cart]="cart"
+      [subTotal]="subTotal"
+      [total]="total"
+      [shippingCost]="shippingCost"
+      [tax]="tax"
+      ></app-products-resume>
     </div>
     <div class="col-6">
       <app-map></app-map>
