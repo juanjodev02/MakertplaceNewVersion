@@ -1,7 +1,7 @@
 export interface Product {
-  id: number;
-  storeId: number;
-  categoryId: number;
+  id: string;
+  storeId: string;
+  categoryId: string;
   name: string;
   featured: boolean;
   stars: number;

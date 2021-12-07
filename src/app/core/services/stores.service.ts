@@ -16,14 +16,14 @@ export class StoresService {
     });
   }
 
-  public getStore(id: number, includeProducts?: boolean): Observable<Store> {
+  public getStore(id: string, includeProducts?: boolean): Observable<Store> {
     return new Observable<Store>((observer) => {
       observer.next(mockStores.find((store) => store.id === id));
     });
   }
 
   public getProductsByStore(
-    storeId: number,
+    storeId: string,
     count: number,
     offset: number
   ): Observable<Product[]> {

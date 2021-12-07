@@ -59,7 +59,7 @@ export class ProductComponent implements OnInit {
 
   private getDataFromUrl() {
     this.route.params.subscribe((params: Params) => {
-      const id = Number(params['id']);
+      const id = params['id'];
       this.fetchProduct(id);
     });
     this.route.queryParams.subscribe((params: Params) => {
@@ -68,7 +68,7 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  private fetchProduct(productId: number): void {
+  private fetchProduct(productId: string): void {
     this.productService.getProduct(productId).subscribe({
       next: (product) => {
         this.product = product;
@@ -125,6 +125,6 @@ export class ProductComponent implements OnInit {
   }
 
   public addToCart() {
-    this.cartService.addToCart(this.product);
+    this.cartService.addProductToCart(this.product);
   }
 }

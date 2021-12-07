@@ -6,7 +6,7 @@
 <div class="scroll-container container">
   <div class="row flex-row flex-nowrap">
     <div *ngFor="let product of products" class="col-lg-3 col-md-4 col-6">
-      <app-featured-product-card [routerLink]="['/products', product.id.toString()]" [product]="product"></app-featured-product-card>
+      <app-product-card [routerLink]="['/products', product.id.toString()]" [product]="product"></app-product-card>
     </div>
   </div>
 </div>

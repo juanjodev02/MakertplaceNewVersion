@@ -1,5 +1,5 @@
 export interface Store {
-  id: number;
+  id: string;
   name: string;
   imageUrl: string;
   coverUrl: string;

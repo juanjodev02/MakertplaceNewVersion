@@ -9,7 +9,7 @@ import { Card } from 'src/app/core/models/card.model';
 
 export const mockStores: Store[] = Array.from({ length: 10 }, (v, k) => k).map(
   (k) => ({
-    id: k,
+    id: k.toString(),
     name: `Store ${k + 1}`,
     description:
       "Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -32,7 +32,7 @@ export const mockCategories: Category[] = Array.from(
   { length: 9 },
   (v, k) => k
 ).map((k) => ({
-  id: k,
+  id: k.toString(),
   name: `Category ${k + 1}`,
   imageUrl: `/assets/images/_menu-${k + 1}.png`,
 }));
@@ -41,7 +41,7 @@ export const mockProducts: Product[] = Array.from(
   { length: 100 },
   (v, k) => k
 ).map((k) => ({
-  id: k,
+  id: k.toString(),
   storeId: mockStores[Math.ceil(Math.random() * mockStores.length) - 1].id,
   categoryId:
     mockCategories[Math.floor(Math.random() * mockCategories.length)].id,
@@ -62,7 +62,7 @@ export const mockProducts: Product[] = Array.from(
 
 export const mockNews: News[] = Array.from({ length: 3 }, (v, k) => k).map(
   (k) => ({
-    id: k,
+    id: k.toString(),
     title: `News ${k + 1}`,
     imageUrl: 'https://via.placeholder.com/300',
     description: `Description ${k}`,
@@ -79,7 +79,7 @@ export const mockSlides: ISlide[] = Array.from({ length: 10 }, (v, k) => k).map(
 
 export const mockGames: Game[] = Array.from({ length: 3 }, (v, k) => k).map(
   (k) => ({
-    id: k,
+    id: k.toString(),
     name: `Game ${k}`,
     description: `Description ${k}`,
     imageUrl: 'https://via.placeholder.com/300',
@@ -89,7 +89,7 @@ export const mockGames: Game[] = Array.from({ length: 3 }, (v, k) => k).map(
 );
 
 export const userMock: User = {
-  id: 1,
+  id: '1',
   name: 'John Doe',
   defaultCardId: '1',
   additionalCardsIds: ['2', '3'],
