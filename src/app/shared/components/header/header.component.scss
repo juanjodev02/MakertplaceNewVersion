@@ -115,3 +115,20 @@
   transition: .3s;
   color: $white;
 }
+
+.modal-content {
+  background-color: $dark;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: $black;
+  color:$white;
+}
+
+input:focus {
+  outline: none;
+  background: $black;
+  color:$white;
+}

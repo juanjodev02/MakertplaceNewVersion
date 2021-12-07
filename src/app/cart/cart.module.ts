@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
 
 import { CartRoutingModule } from './cart-routing.module';
 import { CartComponent } from './components/cart/cart.component';
@@ -17,6 +18,14 @@ import { MaterialModule } from '../material/material.module';
     PaymentOptionsComponent,
     ProductsResumeCardComponent,
   ],
-  imports: [CommonModule, CartRoutingModule, MaterialModule],
+  imports: [
+    CommonModule,
+    CartRoutingModule,
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAt208EXsvPJI4trTWzrLtp3lqdUKVI6ow',
+      libraries: ['places', 'geocoder'],
+    }),
+  ],
 })
 export class CartModule {}

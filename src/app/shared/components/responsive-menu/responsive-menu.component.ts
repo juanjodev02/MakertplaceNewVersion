@@ -4,16 +4,14 @@ import { INavBarLink } from '../../types/INavbarLink';
 @Component({
   selector: 'app-responsive-menu',
   templateUrl: './responsive-menu.component.html',
-  styleUrls: ['./responsive-menu.component.scss']
+  styleUrls: ['./responsive-menu.component.scss'],
 })
-export class ResponsiveMenuComponent  {
-
+export class ResponsiveMenuComponent {
   @Input()
-  public cartNumber: number = 0;
+  public productCartLength: number | null;
 
   @Input()
   public navBarLinks: INavBarLink[] = [];
 
-  constructor() { }
-
+  constructor() {}
 }

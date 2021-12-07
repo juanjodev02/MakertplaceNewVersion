@@ -1,1 +1,22 @@
-<p>map works!</p>
+<div class="container-fluid py-4">
+
+  <h2>¿Dónde te encuentras?</h2>
+
+  <div class="form-group py-2">
+    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Busca algún lugar ..." autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+  </div>
+
+  <agm-map
+    [latitude]="latitude"
+    [longitude]="longitude"
+    [zoom]="zoom"
+    [styles]="darkTheme"
+  >
+    <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)"></agm-marker>
+  </agm-map>
+
+  <h5>Address: {{address}}</h5>
+  <div>Latitude: {{latitude}}</div>
+  <div>Longitude: {{longitude}}</div>
+</div>

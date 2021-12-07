@@ -1,8 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { INavBarLink } from '../../types/INavbarLink';
-import { CartService } from '../../../core/services/cart.service';
-import { Observable } from 'rxjs';
-import { reduce, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +7,10 @@ import { reduce, map } from 'rxjs/operators';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  public productsInCartLength$: Observable<number>;
-
-  constructor(private cartService: CartService) {
-    this.productsInCartLength$ = this.cartService.cart$.pipe(
-      map((cart) => cart.items.reduce((acc, item) => acc + item.quantity, 0))
-    );
-  }
-
   @Input()
-  public cartNumber: number = 0;
+  public productsInCartLength: number | null;
+
+  constructor() {}
 
   navBarLinks: INavBarLink[] = [
     {

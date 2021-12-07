@@ -42,3 +42,50 @@ h4 {
   margin-bottom: 0;
   font-weight: 700;
 }
+
+.pac-container {
+  background-color: $black !important;
+  color: $white !important;
+  border: none;
+}
+
+.pac-item {
+  padding: 10px 4px;
+  cursor: pointer;
+  color: $white;
+  border: none;
+  border-bottom: 1px solid $gray;
+}
+
+.pac-matched {
+  font-weight: 700;
+  color: $red;
+}
+
+.pac-item-query {
+  font-size: 13px;
+  color: $white;
+  padding-right: 3px;
+}
+
+.pac-item:hover .pac-matched, .pac-item-selected .pac-matched {
+  font-weight: 700;
+  color: $white;
+}
+
+.pac-item:hover, .pac-item:active, .pac-item:focus, .pac-item-selected, .pac-item-selected:hover, .pac-item-selected:active, .pac-item-selected:focus {
+  background-color: $red;
+  color: white;
+}
+
+.gmnoprint a, .gmnoprint span {
+  display:none;
+}
+
+.gmnoprint div {
+  background:none !important;
+}
+
+#GMapsID div div a div img{
+  display:none;
+}

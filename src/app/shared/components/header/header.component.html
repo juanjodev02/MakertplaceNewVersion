@@ -5,7 +5,7 @@
         <img routerLink="/home" class="header--logo" src="/assets/images/logo-png.png" alt="zwippe logo"/>
       </div>
       <!-- MENU (ONLY IN MOBILE DEVICES) -->
-      <app-responsive-menu [navBarLinks]="navBarLinks" [cartNumber]="cartNumber" class="col-12 d-lg-none d-xl-none d-block"></app-responsive-menu>
+      <app-responsive-menu [productCartLength]="productsInCartLength" [navBarLinks]="navBarLinks" class="col-12 d-lg-none d-xl-none d-block"></app-responsive-menu>
       <button
         type="button"
         data-toggle="collapse"
@@ -29,24 +29,18 @@
         >
         <mat-icon>menu</mat-icon>
       </button>
-      <!-- SEARCH INPUT -->
-      <div class="col-12 col-md-12 col-lg-8 d-flex align-items-center justify-content-center">
-        <div class="header--input__container d-flex align-items-center">
-          <input type="text" class="header--input__search" placeholder="Search ..." aria-label="Search">
-          <button class="header--input__button">
-            <mat-icon class="header--input__icon">search</mat-icon>
-          </button>
-        </div>
-      </div>
       <!-- ACTIONS -->
-      <div class="d-none d-lg-flex d-xl-flex col-2 col-md-2 align-items-center">
+      <div class="d-none d-lg-flex d-xl-flex col-3 offset-md-7 col-md-3 align-items-center">
         <div class="header--actions__container">
+          <div class="header--actions__button" data-toggle="modal" data-target="#searchModal">
+            <mat-icon>search</mat-icon>
+          </div>
           <a class="header--actions__button" href="#">
             <mat-icon>account_circle</mat-icon>
           </a>
           <a class="header--actions__button" [routerLink]="['/cart']">
             <mat-icon
-              [matBadge]="productsInCartLength$ | async"
+              [matBadge]="productsInCartLength"
               matBadgeSize="medium"
               matBadgeColor="warn"
               aria-label="Cart items count"
@@ -71,4 +65,14 @@
       </div>
       <div class="col-2 col-md-1 col-lg-2"></div>
   </nav>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <input type="text" class="form-control" placeholder="Search...">
+      </div>
+    </div>
+  </div>
 </div>

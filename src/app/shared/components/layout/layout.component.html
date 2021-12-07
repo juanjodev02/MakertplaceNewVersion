@@ -1,5 +1,5 @@
 <div class="app--container pt-2">
-  <app-header></app-header>
+  <app-header [productsInCartLength]="productsInCartLength$ | async"></app-header>
   <router-outlet></router-outlet>
   <app-footer></app-footer>
 </div>
